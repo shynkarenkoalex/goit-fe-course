@@ -27,15 +27,27 @@ img {
         Shop section
 */
 h1 {
-    text-align:  center; 
+    margin-left: 420px;
+}
+
+h1:after {
+    content: url("../img/line.png");
 }
 
 .underimg {
-    display: inline-block;
+    display: block;
+}
+.name {
+  float: left
+}
+.price {
+  float: right
 }
 
 .shop_item {
-    display: inline-block;
+    vertical-align: top;
+    width: 255px;
+    float: left;
 }
 
 .shop_item:not(:nth-of-type(4n+4)) {
@@ -52,15 +64,37 @@ div name price {
     margin: 0 auto;
 }
 
+.d :hover{
+    cursor: pointer;
+}  
+
+.d :hover .name {
+    background: rgb(65, 209, 235)
+}
+
+.d :hover .price {
+    background: rgb(111, 114, 114)
+}
+
 /* 
         News section
 */
 
- .news_item{ 
-    width: 350px; 
-    display: inline-block; 
-    text-align: left;
+h2 {
+    text-align:  center;
+    margin: 70px;
 }
+
+h2:after {
+    content: url("../img/line.png");
+}
+
+.news_item {
+    width: 350px;
+    text-align: left;
+    float: left;
+} 
+
 .news_item:not(:nth-of-type(3n+3)) {
     margin-right: 27px;
 } 
@@ -69,23 +103,5 @@ button{
     background-color: #31cdd8 
 } 
   
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
+
   
