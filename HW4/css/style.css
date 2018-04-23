@@ -1,38 +1,178 @@
+@import url('https://fonts.googleapis.com/css?family=Playfair+Display|Ubuntu:300,700'); 
+
+img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+/* 
+        Header Navigation
+*/
 
 
 
+.logo {
+    display: inline-block;
+    position: relative;
+}
+
+.logo::before {
+    content: url("../img/M.png");
+    position: absolute;
+    top: -6px;
+    right: 32px;
+}    
+
+.nav {
+    display: inline-block;
+    float: right;
+}
+
+.nav a {
+    display: inline-block;
+    padding: 10px 15px;
+}
+
+
+/* 
+        Shop section
+*/
+.clearfix::after {
+    content: '';
+    display: block;
+    clear: both;
+}    
+
+h1 {
+    
+    width: 500px;
+    margin: 0 auto;
+    text-align: center;
+    margin-bottom: 90px;
+    position: relative;
+}
+
+h1::after {
+    content: url("../img/line.png");
+    position: absolute;
+    top: 30px;
+    right: 170px;
+}
 
 
 
-  
- article{ 
-    width: 365px; 
-    display: inline-block; 
-    text-align: left;
-    margin: 30px ; 
+.underimg {
+    display: block;
+}
+.name {
+  float: left
+}
+.price {
+  float: right
+}
+
+.shop_item {
+    vertical-align: top;
+    width: 255px;
+    float: left;
+}
+
+.shop_item:not(:nth-of-type(4n+4)) {
+    margin-right: 26px;
 } 
+
+div name price {
+    display: inline-block;
+}
+
+.container {
+    max-width: 1112px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.name{
+    margin-top: -4px;
+    height: 30px;
+    width: 200px;
+    color: white;
+    background-color: #292c2c 
+}
+
+.price{
+    margin-top: -4px;
+    height: 30px;
+    width: 54px;
+    color: white;
+    background-color: #6e7272 
+}
+
+.d :hover{
+    cursor: pointer;
+}  
+
+.d :hover .name {
+    background: rgb(65, 209, 235)
+}
+
+.d :hover .price {
+    background: rgb(195, 199, 199)
+}
+
+/* 
+        News section
+*/
+
+h2 {
+    text-align:  center;
+    margin: 70px;
+    position: relative;
+}
+
+h2::after {
+    content: url("../img/line.png");
+    position: absolute;
+    top: 30px;
+    right: 403px;
+    
+}
+
+
+
+.news_item {
+    width: 350px;
+    text-align: left;
+    float: left;
+} 
+
+.news_item:not(:nth-of-type(3n+3)) {
+    margin-right: 27px;
+}
+
+.category{ 
+    font-family: 'Ubuntu', sans-serif; 
+    font-weight: 300; 
+    text-transform: lowercase; 
+    color: #666665 
+}
+
+
+.category {
+    display: inline-block;
+    position: relative;
+}
+
+.category::before {
+    content: url("../img/line.png");
+    position: absolute;
+    top: 83px;
+    right: 185px;
+}    
+
 button{
     color: white;
     background-color: #31cdd8 
 } 
   
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
+
   
