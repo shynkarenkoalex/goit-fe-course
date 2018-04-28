@@ -1,9 +1,10 @@
 @import url('https://fonts.googleapis.com/css?family=Playfair+Display|Ubuntu:300,700'); 
-
+@import url('https://fonts.googleapis.com/css?family=Roboto');
 img {
     width: 100%;
     height: auto;
     object-fit: contain;
+    display: block;
 }
 /* 
         Header Navigation
@@ -14,6 +15,7 @@ img {
 .logo {
     display: inline-block;
     position: relative;
+    padding-left: 26px;
 }
 
 .logo::before {
@@ -21,8 +23,10 @@ img {
     position: absolute;
     top: -6px;
     right: 32px;
-}    
+}  
 
+
+   
 .nav {
     display: inline-block;
     float: right;
@@ -65,16 +69,28 @@ h1::after {
     display: block;
 }
 .name {
-  float: left
+  float: left;
+  line-height: 30px;
+  padding-left: 50px;
+  width: 201px;
+  line-height: 40px;
 }
 .price {
-  float: right
+  float: right;
+  text-align: center;
+  width: 54px;
+  color: white;
+  background-color: #6e7272;
+  line-height: 40px;
 }
+
+
 
 .shop_item {
     vertical-align: top;
     width: 255px;
     float: left;
+    margin-top: 30px;
 }
 
 .shop_item:not(:nth-of-type(4n+4)) {
@@ -94,7 +110,7 @@ div name price {
 .name{
     margin-top: -4px;
     height: 30px;
-    width: 200px;
+    width: 150px;
     color: white;
     background-color: #292c2c 
 }
@@ -107,16 +123,26 @@ div name price {
     background-color: #6e7272 
 }
 
+
+
 .d :hover{
     cursor: pointer;
 }  
 
 .d :hover .name {
-    background: rgb(65, 209, 235)
+    background-color: rgb(65, 209, 235)
+    
 }
 
 .d :hover .price {
-    background: rgb(195, 199, 199)
+    background-color: rgb(195, 199, 199)
+
+}
+.shop_item:hover .name{
+    background-color:rgb(26, 188, 156)
+}
+.shop_item:hover .price{
+    background-color: rgb(127, 217, 199)
 }
 
 /* 
@@ -156,6 +182,12 @@ h2::after {
     color: #666665 
 }
 
+.category2{ 
+    font-family: 'Roboto', sans-serif; 
+    font-weight: 300; 
+    text-transform: lowercase; 
+    color: #0c0c04 
+}
 
 .category {
     display: inline-block;
@@ -163,10 +195,13 @@ h2::after {
 }
 
 .category::before {
-    content: url("../img/line.png");
+    content: '';
     position: absolute;
-    top: 83px;
-    right: 185px;
+    top: 98px;
+    right: 210px;
+    width: 140px;
+    height: 2px;
+    background: #4ec6ab;
 }    
 
 button{
