@@ -14,15 +14,17 @@ img {
 
 .logo {
     display: inline-block;
+    font-size: 180%;
     position: relative;
-    padding-left: 26px;
+    padding-left: 30px;
+    
 }
 
 .logo::before {
     content: url("../img/M.png");
     position: absolute;
-    top: -6px;
-    right: 32px;
+    top: 1px;
+    right: 57px;
 }  
 
 
@@ -175,14 +177,14 @@ h2::after {
     margin-right: 27px;
 }
 
-.category{ 
+.category2{ 
     font-family: 'Ubuntu', sans-serif; 
     font-weight: 300; 
     text-transform: lowercase; 
     color: #666665 
 }
 
-.category2{ 
+.category{ 
     font-family: 'Roboto', sans-serif; 
     font-weight: 300; 
     text-transform: lowercase; 
@@ -204,9 +206,13 @@ h2::after {
     background: #4ec6ab;
 }    
 
-button{
+.button{
+    width: 150px;
+    height: 35px;
+    border-radius:5px;
     color: white;
-    background-color: #31cdd8 
+    background-color: #31cdd8;
+    
 } 
   
 
