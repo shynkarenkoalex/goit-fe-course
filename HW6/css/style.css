@@ -1,0 +1,64 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+header{
+    height: 150px;
+}
+
+.wrapper{
+    
+    width: 1170px;
+    padding: 60px;
+    margin: 0 auto;
+     
+}
+
+.mainmenu{
+    float: right;
+}
+
+.mainmenu ul{
+    width: 530px;
+    text-align: justify;
+}
+
+
+
+.mainmenu ul li{
+    list-style: none;
+    display: inline-block;
+    text-transform: uppercase;
+    font-family:  Montserrat;
+    color:  #95e1d3;
+    font-size:  14px;/* Приближение из-за подстановки шрифтов */
+    font-weight:  400;
+    line-height:  11px;/* Приближение из-за подстановки шрифтов */
+    text-align:  center;
+    margin-right: 30px;
+}
+
+.mainmenu ul li a{ 
+    color: #95e1d3;
+    text-decoration: none; 
+} 
+
+
+.mainmenu ul li a:hover{ 
+    color:  #f38181;
+} 
+
+
+.logo{
+    float: left;
+    font-family:  Montserrat;
+    color:  #95e1d3;
+    font-size:  30px;/* Приближение из-за подстановки шрифтов */
+    font-weight:  700;
+    line-height:  32px;/* Приближение из-за подстановки шрифтов */
+    text-align:  left;
+    text-transform: uppercase;
+}
