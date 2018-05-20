@@ -186,6 +186,7 @@ h2::after {
 .news_item2{
     text-align: center;
     padding-bottom: 94px;
+    position: relative;
 }
 
 .flex2::before{
@@ -195,12 +196,13 @@ h2::after {
     width: 370px;
     height: 470px;
     z-index: -1;
+    
 }
 
-.flex3::before{
+.flex2 .flex3::before{
     position: absolute;
     content: '';
-    background: linear-gradient (to top, #fce38a,#f38181);
+    background: -webkit-linear-gradient(90deg, #fce38a 0%, #f38181 100%);
     width: 370px;
     height: 470px;
     opacity: 0;
@@ -222,6 +224,28 @@ h2::after {
 .flex2:hover .big{
     transform: translate(-10px,-10px);
 }
+
+
+.rct{
+    border-width: 1px;
+    border-color: rgb(87, 152, 168);
+    border-style: solid;
+    width: 56px;
+    height: 56px;
+    display: flex;
+    align-items: center;
+    justify-content: center;       
+}
+
+.rct3{
+    display: flex;
+    flex-direction: row;
+    width: 370px;
+    
+    justify-content: center; 
+}
+
+
 
 .category2{ 
     font-family: 'Ubuntu', sans-serif; 
