@@ -247,6 +247,34 @@ h2::after {
 
 
 
+
+.hov {
+    position: absolute;
+    opacity: 0;
+    left: 0;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+    height: 470px;
+    transition: .3s linear;
+}
+
+.news_item2:hover .hov {
+    opacity: 1;
+    transform: translate(-10px, -10px);
+}
+
+
+.hov {
+    position: absolute;
+    opacity: 0;
+    left: 0;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+    transition: .3s linear;
+}
+
 .category2{ 
     font-family: 'Ubuntu', sans-serif; 
     font-weight: 300; 
