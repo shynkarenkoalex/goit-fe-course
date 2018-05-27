@@ -1,6 +1,50 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto');
 @import url('https://fonts.googleapis.com/css?family=Playfair+Display|Ubuntu:300,700'); 
 
+@font-face {
+    font-family: 'Montserrat';
+    src: local('Montserrat Hairline'), local('Montserrat-Hairline'), url('montserrathairline.woff2') format('woff2'), url('montserrathairline.woff') format('woff'), url('montserrathairline.ttf') format('truetype');
+    font-weight: 100;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Montserrat';
+    src: local('Montserrat Light'), local('Montserrat-Light'), url('montserratlight.woff2') format('woff2'), url('montserratlight.woff') format('woff'), url('montserratlight.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Montserrat';
+    src: local('Montserrat'), local('Montserrat-Regular'), url('montserrat.woff2') format('woff2'), url('montserrat.woff') format('woff'), url('montserrat.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Montserrat';
+    src: local('Montserrat Bold'), local('Montserrat-Bold'), url('montserratbold.woff2') format('woff2'), url('montserratbold.woff') format('woff'), url('montserratbold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Montserrat';
+    src: local('Montserrat Black'), local('Montserrat-Black'), url('montserratblack.woff2') format('woff2'), url('montserratblack.woff') format('woff'), url('montserratblack.ttf') format('truetype');
+    font-weight: 900;
+    font-style: normal;
+}
+
+
+
+@font-face {
+	font-family: 'Kaushan Script';
+	src: url('KaushanScript-Regular.eot');
+	src: local('Kaushan Script'), local('KaushanScript-Regular'),
+		url('KaushanScript-Regular.eot?#iefix') format('embedded-opentype'),
+		url('KaushanScript-Regular.woff') format('woff'),
+		url('KaushanScript-Regular.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+
 
 *{
     margin:0;
@@ -79,12 +123,12 @@ header{
 
 
 .logo{
+    font-family: 'Montserrat', arial;
     
-    font-family:  Montserrat;
     color:  #95e1d3;
     font-size:  30px;/* Приближение из-за подстановки шрифтов */
     font-weight:  700;
-    line-height:  32px;/* Приближение из-за подстановки шрифтов */
+    line-height:  32px;
     text-align:  left;
     
 }
@@ -96,10 +140,10 @@ header{
 }
 
 .work{
-    font-family:  KaushanScript;
+    font-family:  'Kaushan Script', arial;
     color:  #333333;
-    font-size:  24px;/* Приближение из-за подстановки шрифтов */
-    font-weight:  400;
+    font-size:  24px;
+    font-weight:  normal;
     text-align:  center;
     position: relative;
    
@@ -107,7 +151,7 @@ header{
 
 h2{
     
-    font-family:  Montserrat;
+    font-family:  'Montserrat', arial;
     color:  #333333;
     font-size:  30px;
     font-weight: 700;
@@ -138,7 +182,7 @@ h2::after {
 
 .lf{
     position: absolute;
-    top: 20px;
+    top: 60px;
     right: 360px;
 }
 
@@ -196,7 +240,8 @@ h2::after {
     width: 370px;
     height: 470px;
     z-index: -1;
-    
+    left: 0;
+    top: 0;
 }
 
 .flex2 .flex3::before{
@@ -216,7 +261,7 @@ h2::after {
     transition: transform 0.2s linear;
 }
 
-.flex2:hover .flex3::before{
+.news_item2:hover .flex3::before{
     opacity: 0.9;
     transform: translate(-10px,-10px);
 }
@@ -234,15 +279,21 @@ h2::after {
     height: 56px;
     display: flex;
     align-items: center;
-    justify-content: center;       
+    justify-content: center; 
+    background: goldenrod      
+}
+
+.rct:hover{
+    background: darkturquoise
 }
 
 .rct3{
     display: flex;
     flex-direction: row;
     width: 370px;
-    
+    align-items: center;
     justify-content: center; 
+    height: 100%;
 }
 
 
