@@ -124,7 +124,7 @@
     display: flex;
     flex-flow: row wrap;
     justify-content: space-between;
-    width: 1170px;
+    width: 940px;
     padding: 60px;
     margin: 0 auto;
 }    
@@ -215,8 +215,10 @@ footer{
 
 }
 .rg{
-    
-    float: right;
+    position: absolute;
+    right: 0;
+    top: -40px;
+    margin-top: 1051px;
 }
 
 .clearfix::after {
@@ -243,11 +245,37 @@ footer{
 
 }
 
-.wrapper{
+footer .footer-wrapper {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    width: max-content;
+    margin-right: 40px;
+    position: relative;
+} 
+
+.g{
     display: flex;
     flex-direction: column;
-    margin-right: 40px;
+    width: 455px;
+    height: 200px;
+    justify-content: space-between;
+    margin-right: 120px;
+    
 }
+
+.r{
+    display: flex;
+    width: max-content;
+    justify-content: space-between;
+    margin-top: 30px;
+    margin-bottom: 70px;
+}
+
+textarea {
+    height: 210px;
+}
+
 .inpt{
     border-radius:  2px;
     border-style:  solid;
@@ -256,7 +284,7 @@ footer{
     background-color:  #ffffff;
     width:  455px;
     height:  50px;
-    margin-top: 10px;
+    
 }
 .inpt::-webkit-input-placeholder{
     color:  #bbbbbb;
@@ -286,17 +314,16 @@ footer{
 }
 
 .button1{
-    border-radius:  3px;
-    background-color:  #fed136;
-    width:  240px;
-    height:  66px;
-    font-family:  Montserrat;
-    color:  #ffffff;
-    font-size:  18px;/*  */
-    font-weight:  700;
-    /* text-align:  center;*/
-    margin-top: 450px;
-    margin-left: 500px;
+    border-radius: 3px;
+    background-color: #fed136;
+    width: 240px;
+    height: 66px;
+    font-family: Montserrat;
+    color: #ffffff;
+    font-size: 18px;
+    font-weight: 700;
+    margin: 0 auto;
+    display: block;
     
 }
 
