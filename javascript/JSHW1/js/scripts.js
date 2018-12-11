@@ -1,26 +1,28 @@
+'use strict';
 
-//<script type="text/javascript">
-//function Input() {
-//const ADMIN_LOGIN = 'admin'; 
-//const ADMIN_PASSWORD = 'm4ngo1zh4ackz0r'; 
-    
-    
-login_ok = false;
-ADMIN_LOGIN = "";
-ADMIN_PASSWORD = "";
-ADMIN_LOGIN = prompt("ADMIN_LOGIN","");
-ADMIN_LOGIN = ADMIN_LOGIN.toLowerCase();
+let message = '';
 
-ADMIN_PASSWORD = prompt("ADMIN_PASSWORD","");
-ADMIN_PASSWORD = ADMIN_PASSWORD.toLowerCase();
-if (ADMIN_LOGIN=="admin" && ADMIN_PASSWORD=="m4ngo1zh4ackz0r") {
-login_ok=true;
+const ADMIN_LOGIN = prompt('Логин', '');
 
-window.location="https://github.com/shynkarenkoalex/goit-fe-course";
-alert("Добро пожаловать!");
+if (ADMIN_LOGIN === 'admin') {
+
+    const ADMIN_PASSWORD = prompt('Пароль', '');
+
+  if (ADMIN_PASSWORD === 'm4ng0h4ckz') {
+    alert( message = 'Добро пожаловать!' );
+  } else if (ADMIN_PASSWORD === null) { // (*)
+    alert( message = ' Отменено пользователем! ' );
+  } else {
+    alert( message = ' Доступ запрещен, неверный пароль! ' );
+  }
+
+} else if (ADMIN_LOGIN === null) { // (**)
+  alert( message = 'Отменено пользователем!' );
+
+} else {
+
+  alert( message = ' Доступ запрещен, неверный логин! ' );
+
 }
 
-
-if (login_ok==false) alert("Доступ запрещен!");
-//}
-//</script>
+console.log(message);
