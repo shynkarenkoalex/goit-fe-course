@@ -27,8 +27,10 @@ if (ADMIN_LOGIN === 'admin') {
 
 console.log(message);*/
 
-const ADMIN_LOGIN = 'admin';
-const ADMIN_PASSWORD = '4ng0h4ckz';
+//========================================
+
+/*const ADMIN_LOGIN = 'admin';
+const ADMIN_PASSWORD = 'm4ng0h4ckz';
 const msgAccessDenied = 'Доступ запрещен!';
 const msgCanceledByUser = 'Отменено пользователем!';
 const msgWelcome = 'Добро пожаловать!';
@@ -49,4 +51,27 @@ if (userPassword === null) {
     alert(msgWelcome);
 } else {
     alert(msgAccessDenied);
+}*/
+
+const ADMIN_LOGIN = "admin";
+const ADMIN_PASSWORD = "m4ng0h4ckz";
+
+let userLogin = prompt("Введите Логин", "");
+let userPassword = "";
+
+if (!userLogin) {
+  alert("Отменено пользователем!");
+} else if (userLogin === ADMIN_LOGIN) {
+    userPassword = prompt("Введите Пароль", "");
+  if (!userPassword) {
+    alert("Отменено пользователем!");
+  } else {
+    if (userPassword === ADMIN_PASSWORD) {
+      alert("Добро пожаловать!");
+    } else {
+      alert("Доступ запрещен, неверный пароль!");
+    }
+  }
+} else {
+  alert("Доступ запрещен, неверный логин!");
 }
