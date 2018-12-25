@@ -1,4 +1,4 @@
-'use strict';
+
 /*let userInput;
 const numbers = [];
 let total = 0;
@@ -53,9 +53,9 @@ console.log(`Общая сумма чисел равна: ${total}`);*/
 
 //==========================================================
 
-"use strict";
 
-const numbers = [];
+
+/*const numbers = [];
 let total = 0;
 let userInput;
 
@@ -87,5 +87,56 @@ if (numbers.length >= 1) {
     alert(`Вы ввели следующие цифры для суммирования: ${numbers}`);
     alert(`Kоличество введённых чисел ${numbers.length }`);    
   
+}*/
+
+//========================================================
+
+/*let userInput;
+const numbers = [];
+let total = 0;
+const inputEnt = 'Введите число';
+const inputBad = 'Было введено не число, попробуйте еще раз';
+const arreyEmpty = 'Вы забыли ввести число. Повторите ввод!';
+
+do {
+  userInput = prompt(inputEnt);
+  if (userInput % 1 !== 0 || userInput === '' || userInput === ' ' || userInput < 0) {
+    alert(inputBad);
+  } else {
+    numbers.push(userInput);
+  }
+} while (userInput !== null);
+for (let i = 0; i < numbers.length - 1; i += 1)
+  total += Number(numbers[i]); {
+  alert('Общая сумма чисел равна: ' + total);
+  alert('Вы ввели следующие цифры для суммирования: ' + numbers );
 }
+*/
+//====================================================
+
+'use strict';
+let userInput;
+const numbers = [];
+let total = 0;
+const inputEnt = 'Введите числа для получения их суммы. Для окончания ввода нажмите Cancel';
+const inputBad = 'Было введено не число, попробуйте еще раз';
+const inputEmpty = 'Вы забыли ввести число. Повторите ввод!';
+
+do {
+  userInput = prompt(inputEnt);
+  if (userInput % 1 !== 0  || userInput === ' ' ) {
+    alert(inputBad);
+  } else 
+    if (userInput === ''  ) {
+      alert(inputEmpty);
+    } else {
+    numbers.push(userInput);
+  }
+} while (userInput !== null);
+for (let i = 0; i < numbers.length - 1; i += 1)
+  total += Number(numbers[i]); {
+  alert('Общая сумма чисел равна: ' + total);
+  alert('Вы ввели следующие цифры для суммирования: ' + numbers );
+}
+
 
