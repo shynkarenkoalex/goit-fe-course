@@ -115,7 +115,8 @@ for (let i = 0; i < numbers.length - 1; i += 1)
 //====================================================
 
 'use strict';
-let userInput;
+
+/*let userInput;
 const numbers = [];
 let total = 0;
 const inputEnt = 'Введите числа для получения их суммы. Для окончания ввода нажмите Cancel';
@@ -137,6 +138,36 @@ for (let i = 0; i < numbers.length - 1; i += 1)
   total += Number(numbers[i]); {
   alert('Общая сумма чисел равна: ' + total);
   alert('Вы ввели следующие цифры для суммирования: ' + numbers );
+
+}*/
+
+//======================================================================
+
+{
+    let userInput;
+    const numbers = [];
+    let total = 0;
+
+    do {
+        userInput = prompt('Введите число!');
+        const hasNumber = Number(userInput);
+
+        if (!userInput) {
+            alert('Отменено пользователем!');
+        } else if (!hasNumber) {
+            alert('Введено не число! Попробуйте еще!');
+        } else {
+            numbers.push(hasNumber);
+        }
+
+    } while (userInput);
+
+    for (const number of numbers) {
+
+        total = number + total;
+    }
+
+    alert(`Общая сумма чисел равна ${total}`);
 }
 
 
