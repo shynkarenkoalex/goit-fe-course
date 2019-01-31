@@ -1,108 +1,208 @@
 
 
-'use strict'
 
-const products = {
-    bread: 10,
-    milk: 15,
-    apples: 20,
-    chicken: 50,
-    cheese: 40,
-};
+'use strict';
 
-function Cashier(name, productDatabase) {
-    this.name = name;
-    this.productDatabase = productDatabase;
-    this.customerMoney = 0;
+// За основу возьмите домашнее задание из модуля №5, но теперь необходимо написать ES6 класс.
 
-    this.getCustomerMoney = function(value) {
-        return this.customerMoney = value;
-    };
+class Notepad {
+  constructor(notes = []) {
+    this._notes = notes;
+  }
+  get notes() {
+    return this._notes;
+  }
+  findNoteById(id) {
+    for (const note of this._notes) {
+      if (note.id === id) {
+        return note;
+      }
+    }
+  }
+  saveNote(note) {
+    this._notes.push(note);
+  }
+  deleteNote(id) {
+    for (let i = 0; i < this._notes.length; i += 1) {
+      const note = this._notes[i];
 
-    this.countTotalPrice = function(order) {
-        let summ = 0;
-        let total = 0;
-        const arrF = Object.entries(this.productDatabase);
-        const arrT = Object.entries(order);
+      if (note.id === id) {
+        return this._notes.splice(i, 1);
+      }
+    }
+  }
+  updateNoteContent(id, updatedContent) {
+    const note = this.findNoteById(id);
+    const updateNoteContent = Object.keys(updatedContent);
 
-        for (let val of arrT) {
-            for(let elem of arrF) {
-                if(elem[0] === val[0]) summ = elem[1] * val[1];
-            }
-            total += summ;
-        }
+    for (const key of updateNoteContent) {
+      note[key] = updatedContent[key];
+    }
 
-        return total;
-    };
+    // Вариант с Деструкторизацией!
 
-    this.countChange = function() {
-        let changeAmount = 0;
-        if (totalPrice < this.customerMoney){
-            changeAmount =  this.customerMoney - totalPrice;
-            return changeAmount;
-        } else {
-            return null;
-        }
-    };
+    // const { fields, value } = updatedContent;
+    // const note = this.findNoteById(id);
 
-    this.onSuccess = function(changeA) {
-        return console.log(`Спасибо за покупку, ваша сдача ${changeA}`);
-    };
+    // return note[fields] = value;
+  }
+  updateNotePriority(id, priority) {
+    const note = this.findNoteById(id);
 
-    this.onError = function() {
-        return console.log('Очень жаль, вам не хватает денег на покупки');
-    };
+    if (!note) {
+      return;
+    }
+    note.priority = priority;
+  }
+  filterNotesByQuery(query) {
+    const filteredNote = [];
+    for (let i = 0; i < this._notes.length; i += 1) {
+      const { title, body } = this._notes[i];
+      const note = `${title} ${body}`;
+      const resultNote = note.toLowerCase().includes(query.toLowerCase());
 
-    this.reset = function() {
-        this.customerMoney = 0;
-    };
+      if (resultNote) {
+        filteredNote.push(this._notes[i]);
+      }
+    }
+    return filteredNote;
+  }
+  filterNotesByPriority(priority) {
+    const filteredNotesOnPriority = [];
+    const notes = this.notes;
+
+    for (const note of notes) {
+      if (note.priority === priority) {
+        filteredNotesOnPriority.push(note);
+      }
+    }
+    return filteredNotesOnPriority;
+  }
+
+  static getPriorityName(priorityId) {
+    const valuesPriorityType = Object.values(PRIORITY_TYPES);
+    const idPriorities = Notepad.PRIORITIES[priorityId].id;
+
+    if (valuesPriorityType.includes(idPriorities)) {
+      return Notepad.PRIORITIES[priorityId].name;
+    }
+  }
 }
 
-/* Заказ пользователя хранится в виде объекта следующего формата. "имя-продукта":"количество-единиц" */
-const order = {
-    bread: 2,
-    milk: 2,
-    apples: 1,
-    cheese: 1,
+/* Статическое свойство пока что оставим так */
+const PRIORITY_TYPES = {
+  LOW: 0,
+  NORMAL: 1,
+  HIGH: 2,
 };
 
-const mango = new Cashier('Mango', products);
+Notepad.PRIORITIES = {
+  0: { id: 0, value: 0, name: 'Low' },
+  1: { id: 1, value: 1, name: 'Normal' },
+  2: { id: 2, value: 2, name: 'High' },
+};
 
-// Проверяем исходные значения полей
-console.log(mango.name); // Mango
-console.log(mango.productDatabase); // ссылка на базу данных продуктов (объект products)
-console.log(mango.customerMoney); // 0
+// Далее идет код для проверки работоспособности класса и созданного экземпляра, вставьте его в конец скрипта. Ваша реализация класса Notepad должна проходить этот тест.
 
-// Вызываем метод countTotalPrice для подсчета общей суммы
-// передавая order - список покупок пользователя
-const totalPrice = mango.countTotalPrice(order);
+const initialNotes = [
+  {
+    id: 1,
+    title: 'JavaScript essentials',
+    body:
+      'Get comfortable with all basic JavaScript concepts: variables, loops, arrays, branching, objects, functions, scopes, prototypes etc',
+    priority: PRIORITY_TYPES.HIGH,
+  },
+  {
+    id: 2,
+    title: 'Refresh HTML and CSS',
+    body:
+      'Need to refresh HTML and CSS concepts, after learning some JavaScript. Maybe get to know CSS Grid and PostCSS, they seem to be trending.',
+    priority: PRIORITY_TYPES.NORMAL,
+  },
+];
 
-// Проверям что посчитали
-console.log(totalPrice); // 110
+/*
+ * Посмотрим имя приоритета по id
+ */
+console.log(Notepad.getPriorityName(PRIORITY_TYPES.LOW)); // "Low"
+console.log(Notepad.getPriorityName(PRIORITY_TYPES.NORMAL)); // "Normal"
+console.log(Notepad.getPriorityName(PRIORITY_TYPES.HIGH)); // "High"
 
-// Вызываем getCustomerMoney для запроса денег покупателя
-mango.getCustomerMoney(300);
+const notepad = new Notepad(initialNotes);
 
-// Проверяем что в поле с деньгами пользователя
-console.log(mango.customerMoney); // 300
+/*
+  Смотрю что у меня в заметках после инициализации
+*/
+console.log('Все текущие заметки: ', notepad.notes);
 
-// Вызываем countChange для подсчета сдачи
-const change = mango.countChange();
+/*
+ * Добавляю еще 2 заметки и смотрю что получилось
+ */
+notepad.saveNote({
+  id: 3,
+  title: 'Get comfy with Frontend Frameworks',
+  body:
+    'First must get some general knowledge about frameworks, then maybe try each one for a week or so. Need to choose between React, Vue and Angular, by reading articles and watching videos.',
+  priority: PRIORITY_TYPES.NORMAL,
+});
 
-// Проверяем что нам вернул countChange
-console.log(change); // 190
+notepad.saveNote({
+  id: 4,
+  title: 'Winter clothes',
+  body:
+    "Winter is coming! Need some really warm clothes: shoes, sweater, hat, jacket, scarf etc. Maybe should get a set of sportwear as well so I'll be able to do some excercises in the park.",
+  priority: PRIORITY_TYPES.LOW,
+});
 
-// Проверяем результат подсчета денег
-if(change !== null) {
-    // При успешном обслуживании вызываем метод onSuccess
-    mango.onSuccess(change); // Спасибо за покупку, ваша сдача 190
-} else {
-    // При неудачном обслуживании вызываем метод onError
-    mango.onError(); // Очень жаль, вам не хватает денег на покупки
-}
+console.log('Все текущие заметки: ', notepad.notes);
 
-// Вызываем reset при любом исходе обслуживания
-mango.reset();
+/*
+ * Зима уже близко, пора поднять приоритет на покупку одежды
+ */
+notepad.updateNotePriority(4, PRIORITY_TYPES.NORMAL);
+console.log('Заметки после обновления приоритета для id 4: ', notepad.notes);
 
-// Проверяем значения после reset
-console.log(mango.customerMoney); // 0
+/*
+ *  Решил что фреймворки отложу немного, понижаю приоритет
+ */
+notepad.updateNotePriority(3, PRIORITY_TYPES.LOW);
+console.log('Заметки после обновления приоритета для id 3: ', notepad.notes);
+
+/*
+ * Решил отфильтровать заметки по слову html
+ */
+console.log(
+  'Отфильтровали заметки по ключевому слову "html": ',
+  notepad.filterNotesByQuery('html'),
+);
+
+/*
+ * Решил отфильтровать заметки по слову javascript
+ */
+console.log(
+  'Отфильтровали заметки по ключевому слову "javascript": ',
+  notepad.filterNotesByQuery('javascript'),
+);
+
+/*
+ * Хочу посмотреть только заметки с нормальным приоритетом
+ */
+console.log(
+  'Отфильтровали заметки по нормальному приоритету: ',
+  notepad.filterNotesByPriority(PRIORITY_TYPES.NORMAL),
+);
+
+/*
+ * Обновим контент заметки с id 3
+ */
+notepad.updateNoteContent(3, { title: 'Get comfy with React.js or Vue.js' });
+console.log(
+  'Заметки после обновления контента заметки с id 3: ',
+  notepad.notes,
+);
+
+/*
+ * Повторил HTML и CSS, удаляю запись c id 2
+ */
+notepad.deleteNote(2);
+console.log('Заметки после удаления с id 2: ', notepad.notes);
