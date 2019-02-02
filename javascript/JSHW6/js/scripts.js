@@ -3,7 +3,7 @@
 
 'use strict';
 
-// За основу возьмите домашнее задание из модуля №5, но теперь необходимо написать ES6 класс.
+/* За основу возьмите домашнее задание из модуля №5, но теперь необходимо написать ES6 класс.*/
 
 class Notepad {
   constructor(notes = []) {
@@ -39,12 +39,6 @@ class Notepad {
       note[key] = updatedContent[key];
     }
 
-    // Вариант с Деструкторизацией!
-
-    // const { fields, value } = updatedContent;
-    // const note = this.findNoteById(id);
-
-    // return note[fields] = value;
   }
   updateNotePriority(id, priority) {
     const note = this.findNoteById(id);
@@ -102,7 +96,8 @@ Notepad.PRIORITIES = {
   2: { id: 2, value: 2, name: 'High' },
 };
 
-// Далее идет код для проверки работоспособности класса и созданного экземпляра, вставьте его в конец скрипта. Ваша реализация класса Notepad должна проходить этот тест.
+/* Далее идет код для проверки работоспособности класса и созданного экземпляра, 
+вставьте его в конец скрипта. Ваша реализация класса Notepad должна проходить этот тест.*/
 
 const initialNotes = [
   {

@@ -2,9 +2,9 @@
 
 'use strict';
 
-// За основу возьмите домашнее задание из модуля №4, но теперь необходимо написать функцию-конструктор Notepad для создания объекта управляющего коллекцией заметок.
+/* За основу возьмите домашнее задание из модуля №4, но теперь необходимо написать функцию-конструктор Notepad для создания объекта управляющего коллекцией заметок.
 
-// Конструктор Notepad при инициализации принимает массив заметок
+Конструктор Notepad при инициализации принимает массив заметок*/
 const Notepad = function Notepad(notes = []) {
   this.notes = notes;
   this.getNotes = function() {
@@ -37,12 +37,6 @@ const Notepad = function Notepad(notes = []) {
       note[key] = updatedContent[key];
     }
 
-    // Вариант с Деструкторизацией!
-
-    // const { fields, value } = updatedContent;
-    // const note = this.findNoteById(id);
-
-    // return note[fields] = value;
   };
   this.updateNotePriority = function(id, priority) {
     const note = this.findNoteById(id);
@@ -90,7 +84,8 @@ Notepad.PRIORITIES = {
   2: { id: 2, value: 2, name: 'High' },
 };
 
-// Добавьте статический метод Notepad.getPriorityName(priorityId), который получает идентификатор приоритета и возвращает значение поля name из карты приоритетов.
+/* Добавьте статический метод Notepad.getPriorityName(priorityId), 
+который получает идентификатор приоритета и возвращает значение поля name из карты приоритетов.*/
 
 Notepad.getPriorityName = function getPriorityName(priorityId) {
   const valuesPriorityType = Object.values(PRIORITY_TYPES);
@@ -101,7 +96,8 @@ Notepad.getPriorityName = function getPriorityName(priorityId) {
   }
 };
 
-// Далее идет код для проверки работоспособности конструктора и созданного экземпляра, вставьте его в конец скрипта. Ваша реализация конструктора Notepad должна проходить этот тест.
+/* Далее идет код для проверки работоспособности конструктора и созданного экземпляра, 
+вставьте его в конец скрипта. Ваша реализация конструктора Notepad должна проходить этот тест.*/
 
 const initialNotes = [
   {
